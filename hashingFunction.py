@@ -33,10 +33,14 @@ class HashMap:
             # ord returns the ASCII value of the char
             numVal += ord(car) + len(key)
 
+        
+
         while self.hash[numVal] != key:
+            if self.hash[numVal] == 0:
+                return "None"   
             numVal += 1
 
-        return self.hash[numVal] if self.hash[numVal] else "None"
+        return self.hash[numVal]
 
 
     def mapDraw(self):
